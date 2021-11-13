@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifying an image border</title>
+    <script>
+        function setBorderWidth(width) {
+            document.getElementById('img1').style.borderWidth = width + "px";
+        }
+    </script>
+</head>
+<body>
+    <p>
+    <img id="img1" 
+        src="Ars_Longa_by_Sholim.gif" 
+        style = "border: 5px solid green;"
+        width='100' height='100' alt='border test'> <a href="https://commons.wikimedia.org/w/index.php?curid=41768154">By Milos Rajkovic</a> 
+    </p>
+
+    <form name="FormName">
+        <input type='button' value="Make border 30px-wide" onclick="setBorderWidth(30);"/>
+        <input type='button' value="Make border 5px-wide" onclick="setBorderWidth(5);"/>
+    </form>
+    
+     
+    
+</body>
+</html>
