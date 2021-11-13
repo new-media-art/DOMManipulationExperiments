@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event Propagation</title>
+    <style>
+        #t-daddy { border: 1px solid red }
+        #c1 { background-color: pink; }
+    </style>
+
+    <script>
+        function stopEvent(ev) {
+            c2 = document.getElementById("c2");
+            c2.innerHTML = "hello";
+
+            ev.stopPropagation();
+            alert('event propagationhalted.')
+        }
+
+        function load() {
+            elem = document.getElementById("tbl1");
+            elem.addEventListener("click", stopEvent, false);
+        }
+    </script>
+</head>
+<body onload='load();'>
+    <table id='t-daddy' onclick="alert('Hi');">
+        <tr id="tbl1">
+            <td id="c1">One</td>
+        </tr>
+        <tr>
+            <td id="c2">two</td>
+        </tr>
+    </table> 
+    
+</body>
+</html>
