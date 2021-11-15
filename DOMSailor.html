@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple DOM example</title>
+    <style>
+      .highlight {
+        color: white;
+        background-color: rgb(231, 188, 188);
+        padding: 10px;
+        width: 250px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img
+        src="https://media.istockphoto.com/photos/royal-navy-sailor-coxswain-of-hms-theseus-1890s-19th-century-picture-id1186135363?b=1&k=20&m=1186135363&s=170667a&w=0&h=jqz2Ec6KVpPLPiJOTI8gfMHZbSDJV94NVUB-dnQSyFQ="
+        alt="A sailor of the Royal Navy made in the 1890s."
+      />
+      <p>
+        Best Sailing Quotes:
+        <a href="https://unsplash.com/s/photos/sailor"
+          >Photos of sailors on usplash.com</a
+        >
+      </p>
+    </section>
+    <script>
+      const link = document.querySelector("a");
+      link.textContent = "I can't change the direction of the wind, . . . ";
+      link.href =
+        "https://kidadl.com/articles/best-sailing-quotes-to-get-you-out-on-the-water";
+      const sect = document.querySelector("section");
+      const para = document.createElement("p");
+      para.textContent =
+        '"The cure for anything is saltwater – sweat, tears, or the sea."';
+      sect.appendChild(para);
+      const text = document.createTextNode(
+        " but I can adjust my sails to always reach my destination."
+      );
+      const linkPara = document.querySelector("p");
+      linkPara.appendChild(text);
+      sect.appendChild(linkPara);
+      //linkPara.remove()
+      para.setAttribute("class", "highlight");
+    </script>
+  </body>
+</html>
